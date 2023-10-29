@@ -1,16 +1,19 @@
 package test;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.*;
 
 import static io.qameta.allure.Allure.step;
+import static io.qameta.allure.SeverityLevel.*;
 
+
+@Owner("Евгений Шевчук")
+@Epic(value = "Тестирование мобильного приложения Wikipedia")
+@Feature(value = "Новая функциональность")
+@Story("Поиск")
 
 public class WikiRemoteTest extends TestBase {
 
@@ -23,17 +26,13 @@ public class WikiRemoteTest extends TestBase {
     LanguagePanelPage language = new LanguagePanelPage();
 
     @Test
-    @Owner("Евгений Шевчук")
-    @Epic(value = "Тестирование мобильного приложения Wikipedia")
-    @Feature(value = "Поиск мобильного приложения Wikipedia")
-    @Story("Поиск")
+    @Severity(BLOCKER)
     @Tag("remote")
-    @DisplayName("Выдача результатов поиска Wiki")
+    @DisplayName("Проверка появления результатов поиска при выдаче")
     void successfulSearchTest() {
         step("Переходим в строку поиска и вводим название необходимой статьи", () -> {
             mainPage.goSearchLine();
             search.addValueSearchLine("Appium");
-
         });
 
         step("Проверяем что появились результаты поиска", () ->
@@ -42,10 +41,7 @@ public class WikiRemoteTest extends TestBase {
     }
 
     @Test
-    @Owner("Евгений Шевчук")
-    @Epic(value = "Тестирование мобильного приложения Wikipedia")
-    @Feature(value = "Ошибки мобильного приложения Wikipedia")
-    @Story("Статьи")
+    @Severity(MINOR)
     @Tag("remote")
     @DisplayName("Проверка поиска")
     void checkErrorMessage() {
@@ -68,12 +64,9 @@ public class WikiRemoteTest extends TestBase {
     }
 
     @Test
-    @Owner("Евгений Шевчук")
-    @Epic(value = "Тестирование мобильного приложения Wikipedia")
-    @Feature(value = "Статьи мобильного приложения Wikipedia")
-    @Story("Поиск")
+    @Severity(NORMAL)
     @Tag("remote")
-    @DisplayName("Поиск статьи")
+    @DisplayName("Проверка выдачи валидной статьи при поиске")
     void qualitySearchTest() {
         step("Переходим в строку поиска и вводим название необходимой статьи", () -> {
                 mainPage.goSearchLine();
@@ -96,10 +89,7 @@ public class WikiRemoteTest extends TestBase {
     }
 
     @Test
-    @Owner("Евгений Шевчук")
-    @Epic(value = "Тестирование мобильного приложения Wikipedia")
-    @Feature(value = "Языки мобильного приложения Wikipedia")
-    @Story("Выбор языка")
+    @Severity(NORMAL)
     @Tag("remote")
     @DisplayName("Добавление языка")
     void choiceLanguageTest() {

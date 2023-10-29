@@ -24,6 +24,7 @@ public class WikiLocalTest extends TestBase {
 
     @Test
     @Tag("local")
+    @DisplayName("Проверка появления результатов поиска при выдаче")
     void successfulSearchTest() {
         back();
         step("Переходим в строку поиска и вводим название необходимой статьи", () -> {
@@ -38,7 +39,7 @@ public class WikiLocalTest extends TestBase {
 
     @Test
     @Tag("local")
-    @DisplayName("Тест 4 стартовых страниц wiki")
+    @DisplayName("Проверка 4 стартовых страниц wiki")
     void fourPages() {
         step("Проверка текста на первой странице", () -> {
             pageOne.textOnePage("The Free Encyclopedia\n" +
@@ -65,7 +66,7 @@ public class WikiLocalTest extends TestBase {
 
     @Test
     @Tag("local")
-    @DisplayName("Проверка присутствия кнопки логина через edits")
+    @DisplayName("Проверка присутствия кнопки логина на странице при переходе через edits")
     void logInButtonTest() {
         back();
         step("Переход в меню edits", () ->{
@@ -83,6 +84,7 @@ public class WikiLocalTest extends TestBase {
 
     @Test
     @Tag("local")
+    @DisplayName("Проверка поиска конкретной статьи")
     void qualitySearchTest() {
         back();
         step("Переходим в строку поиска и вводим название необходимой статьи", () -> {
@@ -105,7 +107,7 @@ public class WikiLocalTest extends TestBase {
 
     @Test
     @Tag("local")
-    @DisplayName("Добавление и удаление языка")
+    @DisplayName("Проверка добавления и удаления языка")
     void addAndDeleteLanguageTest() {
         back();
         step("Переходим в строку поиска", () ->
