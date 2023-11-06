@@ -144,7 +144,7 @@ public class WikiLocalTest extends TestBase {
                 languagePanel.confirmDeletedButton()
         );
 
-        step("Проверяем отсутствие языка в выборе", () ->
+        step("Проверяем отсутствие языка в меню выбора", () ->
                 languagePanel.checkNotChangeLanguage("Русский")
         );
     }
