@@ -41,24 +41,24 @@ public class WikiLocalTest extends TestBase {
     @Tag("local")
     @DisplayName("Проверка 4 стартовых страниц wiki")
     void fourPages() {
-        step("Проверка текста на первой странице", () -> {
+        step("Проверяем текст на первой странице", () -> {
             pageOne.textOnePage("The Free Encyclopedia\n" +
                             "…in over 300 languages");
             pageOne.nextPage();
         });
 
-        step("Проверка текста на второй странице", () -> {
+        step("Проверяем текст на второй странице", () -> {
             pageTwo.textTwoPage("New ways to explore");
             pageTwo.nextPage();
 
         });
 
-        step("Проверка текста на третьей странице", () -> {
+        step("Проверяем текст на третьей странице", () -> {
             pageThree.textThreePage("Reading lists with sync");
             pageThree.nextPage();
         });
 
-        step("Проверка текста на четвертой странице и нажатие на кнопку принятия условий", () -> {
+        step("Проверяем текст на четвертой странице и нажимаем на кнопку принятия условий", () -> {
             pageFour.textFourPage("Send anonymous data");
             pageFour.acceptButton();
         });
@@ -100,7 +100,7 @@ public class WikiLocalTest extends TestBase {
             resultSearch.clickFirstElementResultList();
         });
 
-        step("Находим название статьи", () ->
+        step("Проверяем валидность найденной статьи по тексту внутри", () ->
                 page.localVisibleTextInPage("Quality engineering")
         );
     }
@@ -142,6 +142,9 @@ public class WikiLocalTest extends TestBase {
 
         step("Подтверждаем удаление", () ->
                 languagePanel.confirmDeletedButton()
+        );
+        step("Проверяем отсутствие языка в выборе", () ->
+                languagePanel.checkNotChangeLanguage("Русский")
         );
     }
 }

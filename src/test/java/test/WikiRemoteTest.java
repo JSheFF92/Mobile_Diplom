@@ -82,7 +82,7 @@ public class WikiRemoteTest extends TestBase {
                 resultSearch.clickFirstElementResultList()
         );
 
-        step("Находим название статьи", () -> {
+        step("Проверяем валидность найденной статьи по тексту внутри", () -> {
                 page.visibleTextInPage();
                 page.findTextInPage("Quality engineering");
         });

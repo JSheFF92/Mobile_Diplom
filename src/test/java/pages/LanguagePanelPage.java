@@ -78,4 +78,11 @@ public class LanguagePanelPage {
 
         return this;
     }
+
+
+    public LanguagePanelPage checkNotChangeLanguage(String value) {
+        checkLanguage.findBy(text(value)).shouldNotBe(visible);
+
+        return this;
+    }
 }
