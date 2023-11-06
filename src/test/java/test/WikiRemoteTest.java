@@ -36,7 +36,7 @@ public class WikiRemoteTest extends TestBase {
         });
 
         step("Проверяем что появились результаты поиска", () ->
-            resultSearch.checkResultList()
+                resultSearch.checkResultList()
         );
     }
 
@@ -46,8 +46,8 @@ public class WikiRemoteTest extends TestBase {
     @DisplayName("Проверка поиска")
     void checkErrorMessage() {
         step("Переходим в строку поиска и вводим название необходимой статьи", () -> {
-                mainPage.goSearchLine();
-                search.addValueSearchLine("Appium");
+            mainPage.goSearchLine();
+            search.addValueSearchLine("Appium");
         });
 
         step("Проверяем что появились результаты поиска", () ->
@@ -69,8 +69,8 @@ public class WikiRemoteTest extends TestBase {
     @DisplayName("Проверка выдачи валидной статьи при поиске")
     void qualitySearchTest() {
         step("Переходим в строку поиска и вводим название необходимой статьи", () -> {
-                mainPage.goSearchLine();
-                search.addValueSearchLine("Quality engineering");
+            mainPage.goSearchLine();
+            search.addValueSearchLine("Quality engineering");
         });
 
         step("Проверяем что появились результаты поиска", () ->
@@ -83,8 +83,8 @@ public class WikiRemoteTest extends TestBase {
         );
 
         step("Проверяем валидность найденной статьи по тексту внутри", () -> {
-                page.visibleTextInPage();
-                page.findTextInPage("Quality engineering");
+            page.visibleTextInPage();
+            page.findTextInPage("Quality engineering");
         });
     }
 
@@ -107,7 +107,6 @@ public class WikiRemoteTest extends TestBase {
 
         step("Выбираем язык", () ->
                 language.choiceLanguage("Svenska")
-
         );
 
         step("Проверяем смену языка", () ->

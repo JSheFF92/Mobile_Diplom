@@ -43,7 +43,7 @@ public class WikiLocalTest extends TestBase {
     void fourPages() {
         step("Проверяем текст на первой странице", () -> {
             pageOne.textOnePage("The Free Encyclopedia\n" +
-                            "…in over 300 languages");
+                    "…in over 300 languages");
             pageOne.nextPage();
         });
 
@@ -69,16 +69,16 @@ public class WikiLocalTest extends TestBase {
     @DisplayName("Проверка присутствия кнопки логина на странице при переходе через edits")
     void logInButtonTest() {
         back();
-        step("Переход в меню edits", () ->{
+        step("Переход в меню edits", () -> {
             mainPage.goEdits();
         });
 
         step("Переход в меню логина", () ->
-            edits.goLoginPage()
+                edits.goLoginPage()
         );
 
         step("Проверяем текст кнопки Log in", () ->
-            login.checkTextLoginButton("Log in")
+                login.checkTextLoginButton("Log in")
         );
     }
 
@@ -93,7 +93,7 @@ public class WikiLocalTest extends TestBase {
         });
 
         step("Проверяем что поиск не пустой", () ->
-                        resultSearch.checkResultList()
+                resultSearch.checkResultList()
         );
 
         step("Выбираем первую найденную статью", () -> {
@@ -111,7 +111,7 @@ public class WikiLocalTest extends TestBase {
     void addAndDeleteLanguageTest() {
         back();
         step("Переходим в строку поиска", () ->
-                        mainPage.goSearchLine()
+                mainPage.goSearchLine()
         );
 
         step("Добавление языка", () -> {
@@ -125,11 +125,11 @@ public class WikiLocalTest extends TestBase {
         );
 
         step("Переходим в меню удаления языка", () ->
-            languagePanel.deletedMenu()
+                languagePanel.deletedMenu()
         );
 
         step("Нажимаем кнопку удаления", () ->
-            languagePanel.deletedButton()
+                languagePanel.deletedButton()
         );
 
         step("Выбираем язык который собираемся удалить", () ->
@@ -143,6 +143,7 @@ public class WikiLocalTest extends TestBase {
         step("Подтверждаем удаление", () ->
                 languagePanel.confirmDeletedButton()
         );
+
         step("Проверяем отсутствие языка в выборе", () ->
                 languagePanel.checkNotChangeLanguage("Русский")
         );
